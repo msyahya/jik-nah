@@ -9,10 +9,10 @@
   <meta name="description" content="Portal representatif resmi Jombang Ibu Kota Nahdliyin. Pusat peradaban, pelestarian manuskrip turats, pendidikan pesantren luhur, dan penguatan nilai kebangsaan toleran.">
   <meta name="keywords" content="Jombang, Ibu Kota Nahdliyin, Pesantren, UNESCO, Cagar Budaya, Manuskrip, Turats, Fiqih Peradaban">
   
-  <!-- Google Fonts: Plus Jakarta Sans & Merriweather -->
+  <!-- Google Fonts: Plus Jakarta Sans, Merriweather & Amiri (Arabic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,6 +44,7 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
             serif: ['"Merriweather"', 'Georgia', 'serif'],
+            arabic: ['"Amiri"', '"Traditional Arabic"', 'Scheherazade', 'serif'],
           },
           boxShadow: {
             'sharp': '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04)',
@@ -55,6 +56,11 @@
   </script>
 
   <style>
+    /* Arabic Font Class */
+    .font-arabic {
+      font-family: 'Amiri', 'Traditional Arabic', serif;
+    }
+
     /* UNESCO Sharp Visual Aesthetic & Typography Baseline */
     body {
       color: #1E293B;
@@ -240,11 +246,61 @@
               </div>
             </li>
 
-            <!-- Menu Item: Berita & Rilis -->
-            <li class="list-none">
-              <a href="#berita" class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-block">
-                Berita & Rilis
-              </a>
+            <!-- Menu Item: Berita & Rilis (Dropdown 7 Kategori Sesuai Permintaan Klien) -->
+            <li class="relative group list-none">
+              <button class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-flex items-center focus:outline-none">
+                <span>Berita & Rilis</span>
+                <svg class="w-3.5 h-3.5 text-slate-400 ml-1 inline-block transition-transform duration-200 group-hover:rotate-180 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              
+              <!-- Dropdown Menu 7 Kategori -->
+              <div class="absolute left-0 top-full mt-2 bg-white shadow-xl rounded-lg border border-slate-100 p-2 min-w-[220px] hidden group-hover:block z-50 animate-fadeIn">
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 py-1.5 mb-1 border-b border-slate-100">Kanal Berita & Rilis</div>
+                <ul class="list-none m-0 p-0 space-y-0.5">
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('pendidikan')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Pendidikan</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('pariwisata')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Pariwisata</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('sosial')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Sosial</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('pemerintah')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Pemerintah</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('gayahidup')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Gaya Hidup</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('hukumpolitik')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Hukum dan Politik</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                  <li class="list-none">
+                    <a href="#berita" onclick="filterNews('tokohreligi')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
+                      <span>Tokoh dan Religi</span>
+                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
 
             <!-- Menu Item: Warisan & Nilai -->
@@ -329,10 +385,28 @@
       </div>
 
       <!-- Drawer Nav Links -->
-      <nav class="flex-1 px-4 py-6 space-y-3 overflow-y-auto">
+      <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
         <a href="#" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-bold text-brand-green bg-emerald-50 rounded-none">Beranda</a>
+        <a href="#jadwal-sholat" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-emerald-800 bg-emerald-50/60 hover:bg-emerald-100/50">Jadwal Sholat & Ibadah</a>
         <a href="#pilar" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Kiprah & Pilar Fokus</a>
-        <a href="#berita" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Berita & Rilis</a>
+        
+        <!-- Mobile Dropdown Berita & Rilis (7 Kategori) -->
+        <div class="py-1">
+          <button type="button" onclick="document.getElementById('mobileBeritaSub').classList.toggle('hidden')" class="w-full flex items-center justify-between px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">
+            <span>Berita & Rilis (7 Kategori)</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div id="mobileBeritaSub" class="pl-4 pr-1 py-1 space-y-1 text-xs">
+            <a href="#berita" onclick="filterNews('pendidikan'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pendidikan</a>
+            <a href="#berita" onclick="filterNews('pariwisata'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pariwisata</a>
+            <a href="#berita" onclick="filterNews('sosial'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Sosial</a>
+            <a href="#berita" onclick="filterNews('pemerintah'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pemerintah</a>
+            <a href="#berita" onclick="filterNews('gayahidup'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Gaya Hidup</a>
+            <a href="#berita" onclick="filterNews('hukumpolitik'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Hukum dan Politik</a>
+            <a href="#berita" onclick="filterNews('tokohreligi'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Tokoh dan Religi</a>
+          </div>
+        </div>
+
         <a href="#warisan" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Warisan & Nilai Sejarah</a>
         <a href="#dampak" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Data & Angka Dampak</a>
         <a href="#publikasi" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Publikasi & Dokumen</a>
@@ -509,6 +583,101 @@
 
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3.5. WIDGET JADWAL IBADAH & WAKTU SHOLAT (JOMBANG & SEKITARNYA) -->
+  <!-- ========================================================================= -->
+  <section id="jadwal-sholat" class="relative z-20 py-8 bg-slate-100/70 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-emerald-900 via-slate-900 to-emerald-950 text-white p-6 sm:p-8 rounded-2xl shadow-md border border-emerald-700/40 relative overflow-hidden">
+        <!-- Ambient Watermark & Pattern -->
+        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -left-10 -top-10 w-60 h-60 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="bg-pattern-islamic absolute inset-0 opacity-15 pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/15">
+          <!-- Left: Label & Lokasi -->
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl border border-white/20 flex items-center justify-center text-amber-300 shrink-0 shadow-sm">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2c-.6 0-1 .4-1 1v1.1C9.2 4.6 7.7 5.7 6.8 7.3L5 6.4v3.1l1.1.6C6 10.6 6 11.3 6 12v6H4v2h16v-2h-2v-6c0-.7 0-1.4-.1-1.9l1.1-.6V6.4l-1.8.9C16.3 5.7 14.8 4.6 13 4.1V3c0-.6-.4-1-1-1zm0 4.5c2.5 0 4.5 2 4.5 4.5V18H7.5v-7c0-2.5 2-4.5 4.5-4.5zm0 3c-.8 0-1.5.7-1.5 1.5v3h3v-3c0-.8-.7-1.5-1.5-1.5z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-black uppercase tracking-widest text-amber-300">Jadwal Sholat & Waktu Ibadah</span>
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold font-serif text-white tracking-tight mt-0.5">
+                Kab. Jombang & Sekitarnya
+              </h2>
+              <p class="text-xs text-slate-300 mt-0.5">
+                Rujukan Resmi Hisab Rukyat Kemenag & Lembaga Falakiyah NU Jombang (WIB)
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Tanggal Hijriah, Masehi & Jam Realtime -->
+          <div class="flex items-center gap-4 bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/15 self-start md:self-auto">
+            <div class="text-left md:text-right">
+              <span id="prayerHijriDate" class="text-xs font-bold text-amber-300 block">20 Jumadil Ula 1448 H</span>
+              <span id="prayerMasehiDate" class="text-xs text-slate-200 block">Senin, 09 November 2026</span>
+            </div>
+            <div class="border-l border-white/20 pl-4 text-center">
+              <span class="text-[10px] text-slate-300 uppercase tracking-wider block font-medium">Waktu Sekarang</span>
+              <span id="livePrayerClock" class="font-mono text-base sm:text-lg font-bold text-emerald-300 tracking-wider">--:--:-- WIB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid 6 Waktu Sholat -->
+        <div class="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mt-6">
+          <!-- Subuh -->
+          <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition">
+            <span class="text-xs text-slate-300 font-medium block">Subuh</span>
+            <span class="text-xl font-bold font-serif text-white block mt-1.5">03:52</span>
+            <span class="text-[10px] text-emerald-400 font-semibold block mt-1">Fajar Shadiq</span>
+          </div>
+
+          <!-- Terbit / Dhuha -->
+          <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition">
+            <span class="text-xs text-slate-300 font-medium block">Terbit / Dhuha</span>
+            <span class="text-xl font-bold font-serif text-white block mt-1.5">05:12</span>
+            <span class="text-[10px] text-amber-300 font-semibold block mt-1">Dhuha 05:36</span>
+          </div>
+
+          <!-- Dzuhur -->
+          <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition">
+            <span class="text-xs text-slate-300 font-medium block">Dzuhur</span>
+            <span class="text-xl font-bold font-serif text-white block mt-1.5">11:28</span>
+            <span class="text-[10px] text-slate-300 block mt-1">Tergelincir Matahari</span>
+          </div>
+
+          <!-- Ashar (Highlight Aktif Sholat Berikutnya) -->
+          <div class="bg-white/10 border-2 border-amber-400/80 rounded-xl p-4 text-center shadow-lg relative transform sm:scale-105 transition">
+            <span class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[9px] font-black uppercase px-2 py-0.5 rounded-full shadow">Sholat Berikutnya</span>
+            <span class="text-xs text-amber-200 font-bold block">Ashar</span>
+            <span class="text-2xl font-extrabold font-serif text-amber-300 block mt-1">14:48</span>
+            <span class="text-[10px] text-emerald-300 font-semibold block mt-1">Waktu Utama</span>
+          </div>
+
+          <!-- Maghrib -->
+          <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition">
+            <span class="text-xs text-slate-300 font-medium block">Maghrib</span>
+            <span class="text-xl font-bold font-serif text-white block mt-1.5">17:40</span>
+            <span class="text-[10px] text-slate-300 block mt-1">Buka Puasa Sunnah</span>
+          </div>
+
+          <!-- Isya -->
+          <div class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl p-4 text-center transition">
+            <span class="text-xs text-slate-300 font-medium block">Isya</span>
+            <span class="text-xl font-bold font-serif text-white block mt-1.5">18:52</span>
+            <span class="text-[10px] text-slate-300 block mt-1">Termasuk Witir</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -701,77 +870,46 @@
           </p>
         </div>
 
-        <!-- Filter Tabs (Vanilla JS Powered) -->
-        <div class="flex flex-wrap items-center gap-1.5 bg-white p-1.5 border border-slate-200 text-xs font-bold">
+        <!-- Filter Tabs (Sesuai 7 Kategori Klien) -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-white p-1.5 border border-slate-200 text-xs font-bold shadow-sm">
           <button onclick="filterNews('all')" id="tab-all" class="news-tab px-3 py-1.5 bg-brand-green text-white transition">Semua</button>
-          <button onclick="filterNews('siaran')" id="tab-siaran" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Siaran Pers</button>
-          <button onclick="filterNews('warisan')" id="tab-warisan" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Warisan & Budaya</button>
-          <button onclick="filterNews('opini')" id="tab-opini" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Opini & Esai</button>
+          <button onclick="filterNews('pendidikan')" id="tab-pendidikan" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Pendidikan</button>
+          <button onclick="filterNews('pariwisata')" id="tab-pariwisata" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Pariwisata</button>
+          <button onclick="filterNews('sosial')" id="tab-sosial" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Sosial</button>
+          <button onclick="filterNews('pemerintah')" id="tab-pemerintah" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Pemerintah</button>
+          <button onclick="filterNews('gayahidup')" id="tab-gayahidup" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Gaya Hidup</button>
+          <button onclick="filterNews('hukumpolitik')" id="tab-hukumpolitik" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Hukum & Politik</button>
+          <button onclick="filterNews('tokohreligi')" id="tab-tokohreligi" class="news-tab px-3 py-1.5 text-slate-600 hover:text-slate-900 transition">Tokoh & Religi</button>
         </div>
       </div>
 
-      <!-- News 3-Column Grid -->
+      <!-- News Multi-Category Grid -->
       <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Article 1 (Siaran Pers) -->
-        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="siaran">
+        <!-- Article 1: Tokoh dan Religi -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="tokohreligi">
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
             <img 
               src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" 
               alt="Halaqah Ulama" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
-              Siaran Pers
+            <span class="absolute top-3 left-3 bg-emerald-700 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Tokoh & Religi
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
-                <span>04 November 2026</span>
+                <span>08 November 2026</span>
                 <span>•</span>
-                <span>Sekretariat Pusat</span>
+                <span>Pusat Kajian Muassis</span>
               </div>
               <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
-                Deklarasi Jombang 2026: Rekomendasi Penguatan Peran Pesantren dalam Diplomasi Kemanusiaan Dunia
+                Meneladani Hadratussyaikh KH. M. Hasyim Asy'ari dalam Merawat Ukhuwah dan Persatuan Kebangsaan
               </h3>
               <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
-                Hasil konsensus musyawarah alim ulama menetapkan lima aksi prioritas perlindungan warisan intelektual dan pengentasan ketimpangan sosial melalui instrumen filantropi Islam.
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-xs font-semibold text-slate-500">4 Menit Baca</span>
-              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
-                Baca Lengkap &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 2 (Warisan) -->
-        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="warisan">
-          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
-            <img 
-              src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=800&q=80" 
-              alt="Manuskrip Kuno" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <span class="absolute top-3 left-3 bg-brand-gold-dark text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
-              Warisan & Budaya
-            </span>
-          </div>
-          <div class="p-6 flex-1 flex flex-col justify-between">
-            <div>
-              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
-                <span>02 November 2026</span>
-                <span>•</span>
-                <span>Laboratorium Filologi</span>
-              </div>
-              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
-                Penemuan Fragmen Syarah Naskah Asli Hadratussyaikh KH. M. Hasyim Asy'ari Berangka Tahun 1928
-              </h3>
-              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
-                Tim peneliti filologi mengonfirmasi keaslian naskah bermaterai kertas Eropa yang memuat ulasan mendalam tentang adab pencari ilmu dan etika persaudaraan lintas bangsa.
+                Peringatan haul dan halaqah pemikiran muassis menggali kembali risalah adabul 'alim wal muta'allim sebagai pedoman moral kepemimpinan umat.
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
@@ -783,16 +921,156 @@
           </div>
         </article>
 
-        <!-- Article 3 (Opini & Esai) -->
-        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="opini">
+        <!-- Article 2: Pendidikan -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="pendidikan">
           <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
             <img 
               src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" 
-              alt="Diskusi Ilmiah Santri" 
+              alt="Pendidikan Santri" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <span class="absolute top-3 left-3 bg-brand-blue text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
-              Opini & Esai
+            <span class="absolute top-3 left-3 bg-brand-green text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Pendidikan
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
+                <span>06 November 2026</span>
+                <span>•</span>
+                <span>Dewan Ma'had Aly Jombang</span>
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
+                Revitalisasi Kurikulum Turats Berbasis Sains Modern dan Penguatan Metodologi Riset Pesantren
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
+                Ma'had Aly se-Jombang meluncurkan platform digitalisasi kajian kitab kuning berbasis kecerdasan buatan etis untuk santri generasi masa depan.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">4 Menit Baca</span>
+              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
+                Baca Lengkap &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3: Pariwisata -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="pariwisata">
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80" 
+              alt="Wisata Religi Jombang" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Pariwisata
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
+                <span>04 November 2026</span>
+                <span>•</span>
+                <span>Dinas Pariwisata & Cagar</span>
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
+                Penataan Kawasan Wisata Religi Makam Gus Dur dan Situs Sejarah Terpadu Ramah Peziarah
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
+                Integrasi jalur pejalan kaki, pemandu audio multibahasa, dan pusat oleh-oleh khas Jombang untuk mendukung kenyamanan jutaan peziarah setiap tahun.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">6 Menit Baca</span>
+              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
+                Baca Lengkap &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4: Pemerintah -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="pemerintah">
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80" 
+              alt="Pemerintah Daerah" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Pemerintah
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
+                <span>02 November 2026</span>
+                <span>•</span>
+                <span>Humas Pemkab Jombang</span>
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
+                Sinergi Pemkab dan Lembaga Nahdliyin Terbitkan Perda Perlindungan Cagar Budaya Pesantren
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
+                Regulasi baru memastikan alokasi anggaran pelestarian gedung kuno, perlindungan zonasi pusaka, serta insentif perpajakan untuk pengelola cagar budaya.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">5 Menit Baca</span>
+              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
+                Baca Lengkap &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 5: Hukum dan Politik -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="hukumpolitik">
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" 
+              alt="Hukum dan Konstitusi" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-slate-800 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Hukum & Politik
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
+                <span>30 Oktober 2026</span>
+                <span>•</span>
+                <span>Lembaga Kajian Hukum NU</span>
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
+                Membedah Fiqih Siyasah: Spirit Resolusi Jihad Menjaga Kedaulatan Konstitusi dan Keadilan Hukum
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
+                Diskusi pakar hukum tata negara menelaah relasi agama dan negara yang harmonis dalam kerangka NKRI berdasarkan konsensus ulama 1984 di Situbondo.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">7 Menit Baca</span>
+              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
+                Baca Lengkap &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6: Sosial -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="sosial">
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80" 
+              alt="Aksi Sosial Kemasyarakatan" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-blue-700 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Sosial
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
@@ -800,17 +1078,52 @@
               <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
                 <span>28 Oktober 2026</span>
                 <span>•</span>
-                <span>Oleh: Dr. Ahmad Baihaqi</span>
+                <span>LAZISNU Jombang</span>
               </div>
               <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
-                Membaca Masa Depan Dunia dari Bilik Santri: Refleksi Epistemologi Turats di Era Otomasi
+                Penyaluran Beasiswa Santri dan Penguatan Ketahanan Pangan Komunitas Petani Desa
               </h3>
               <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
-                Bagaimana tradisi dialektika halaqah pesantren memberikan kerangka etis yang kokoh dalam memandu perkembangan teknologi masa depan tanpa kehilangan akar kemanusiaan.
+                Gerakan Koin NU Peduli mendistribusikan bantuan pendidikan kepada 1.500 santri berprestasi dari keluarga prasejahtera di 21 kecamatan.
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span class="text-xs font-semibold text-slate-500">7 Menit Baca</span>
+              <span class="text-xs font-semibold text-slate-500">4 Menit Baca</span>
+              <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
+                Baca Lengkap &rarr;
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 7: Gaya Hidup -->
+        <article class="news-card bg-white border border-neutral-border shadow-sharp hover:shadow-xl transition-all duration-300 flex flex-col group" data-category="gayahidup">
+          <div class="relative overflow-hidden aspect-[16/9] bg-slate-100">
+            <img 
+              src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80" 
+              alt="Gaya Hidup Halal" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1">
+              Gaya Hidup
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-500 font-medium mb-2 flex items-center gap-2">
+                <span>25 Oktober 2026</span>
+                <span>•</span>
+                <span>Inkubasi Bisnis Santri</span>
+              </div>
+              <h3 class="font-serif font-bold text-lg text-slate-900 leading-snug group-hover:text-brand-green transition-colors mb-3">
+                Tren Gaya Hidup Halal: Produk UMKM Olahan Santri Jombang Bersertifikasi Tembus Ekspor
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-muted leading-relaxed line-clamp-3">
+                Inovasi kopi rempah dan busana santri etnik modern karya santripreneur lokal menarik minat pasar pameran industri halal internasional.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span class="text-xs font-semibold text-slate-500">5 Menit Baca</span>
               <a href="#berita" class="text-xs font-bold text-brand-green group-hover:text-brand-green-dark inline-flex items-center gap-1">
                 Baca Lengkap &rarr;
               </a>
@@ -1384,27 +1697,66 @@
       <!-- Multi-Column Directory Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
         
-        <!-- Organization Identity (Span 2 Cols) -->
+        <!-- Organization Identity (Span 2 Cols) Sesuai Catatan Klien -->
         <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center space-x-3">
+          <!-- Kutipan Teks Arab Otoritatif -->
+          <p class="font-serif text-lg md:text-xl text-amber-200/90 text-center md:text-left mb-3 dir-rtl font-arabic leading-relaxed">
+            فكيف إذا جئنا من كل أمة بشهيد وجئنا بك على هؤلاء شهيدا
+          </p>
+
+          <!-- Identitas Logo Bulat Utuh -->
+          <div class="flex items-center space-x-3.5">
             <img 
               src="Logo.png" 
               alt="Logo Jombang Ibu Kota Nahdliyin" 
-              class="h-12 w-auto object-contain filter brightness-110"
-              onerror="this.src='https://placehold.co/100x100/0C6E3D/FFFFFF?text=JIK';"
+              class="h-14 sm:h-16 w-auto rounded-full object-contain filter brightness-110 shadow-md border border-white/10"
+              onerror="this.src='https://placehold.co/120x120/0C6E3D/FFFFFF?text=JIK';"
             >
             <div>
-              <span class="block font-bold text-lg text-white tracking-tight uppercase">JOMBANG</span>
-              <span class="block text-xs font-semibold text-emerald-400 uppercase tracking-wider">Ibu Kota Nahdliyin</span>
+              <span class="block font-black text-lg text-white tracking-tight uppercase">JOMBANG</span>
+              <span class="block text-xs font-bold text-emerald-400 uppercase tracking-wider">Ibu Kota Nahdliyin</span>
+              <span class="block text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Pusat Peradaban & Warisan Turats</span>
             </div>
           </div>
+
           <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-            Lembaga pengelola peradaban dan pusat dokumentasi kebudayaan, keilmuan turats, serta pemuliaan situs sejarah para muassis jam'iyyah Nahdlatul Ulama di bumi Jombang.
+            Lembaga pengelola peradaban dan pusat dokumentasi kebudayaan, keilmuan turats, serta pemuliaan nilai-nilai luhur perjuangan para muassis Nahdlatul Ulama di bumi Jombang.
           </p>
-          <div class="text-xs text-slate-400 space-y-1 pt-2">
-            <p><strong>Sekretariat Utama:</strong> Gedung Pusat Peradaban Nahdliyin</p>
-            <p>Jl. KH. Hasyim Asy'ari No. 1926, Tebuireng, Diwek, Jombang 61471</p>
-            <p>Surel Otoritatif: <a href="mailto:sekretariat@jombangnahdliyin.or.id" class="text-emerald-400 hover:underline">sekretariat@jombangnahdliyin.or.id</a></p>
+
+          <!-- Detail Kontak & Alamat Resmi Klien -->
+          <div class="text-xs text-slate-300 space-y-2.5 pt-2 border-t border-slate-800/80">
+            <div class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <div>
+                <p class="font-bold text-white uppercase tracking-wider">JOMBANG IBU KOTA NAHDLIYIN</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div>
+                <p class="text-slate-400 font-semibold text-[11px]">Sekretariat 1 (Jombang Kota):</p>
+                <p class="text-slate-200">Jalan Ki Hajar Dewantara Nomor 24 A RT 002 RW 001 (Jombang Kota)</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div>
+                <p class="text-slate-400 font-semibold text-[11px]">Sekretariat 2 (Jogoroto):</p>
+                <p class="text-slate-200">Perum Berkah Pratama Regency, Dsn. Kalianyar, Ds. Jogoroto, Kec Jogoroto, Kab. Jombang</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2.5 pt-1">
+              <svg class="w-4 h-4 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>Telepon / HP: <a href="tel:081252512235" class="text-white font-semibold hover:text-emerald-400 transition">081252512235</a></span>
+            </div>
+
+            <div class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>Email: <a href="mailto:nahdliyinjombangibukota@gmail.com" class="text-emerald-300 hover:underline">nahdliyinjombangibukota@gmail.com</a></span>
+            </div>
           </div>
         </div>
 
@@ -1605,8 +1957,26 @@
       if (displayElem) {
         displayElem.textContent = formattedDate;
       }
+      const prayerMasehi = document.getElementById('prayerMasehiDate');
+      if (prayerMasehi) {
+        prayerMasehi.textContent = formattedDate;
+      }
     }
     updateDateDisplay();
+
+    // 1.5. Realtime Clock for Prayer Times Widget
+    function updatePrayerClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const clockElem = document.getElementById('livePrayerClock');
+      if (clockElem) {
+        clockElem.textContent = hours + ':' + minutes + ':' + seconds + ' WIB';
+      }
+    }
+    setInterval(updatePrayerClock, 1000);
+    updatePrayerClock();
 
     // 2. Search Modal Handler (Click & Keyboard Shortcut Ctrl+K / Cmd+K / Esc)
     function toggleSearchModal(show) {
