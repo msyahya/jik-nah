@@ -197,130 +197,62 @@
           <div class="h-10 w-px bg-slate-200 mx-5 hidden lg:block" aria-hidden="true"></div>
         </div>
 
-        <!-- Navigasi Utama (Tengah - Bebas Bullet Point) -->
-        <nav aria-label="Navigasi Utama" class="hidden xl:block">
-          <ul class="flex items-center space-x-6 list-none m-0 p-0">
-            <!-- Menu Item: Beranda (Active State Elegan Red Border Bottom) -->
+        <!-- Navigasi Utama (Baru: Menggantikan Menu Lama dengan 7 Rubrik Klien) -->
+        <nav aria-label="Navigasi Utama" class="hidden lg:block">
+          <ul class="flex items-center space-x-3 xl:space-x-5 list-none m-0 p-0">
+            <!-- Menu Item: Beranda -->
             <li class="list-none">
-              <a href="#" class="text-sm font-bold text-red-600 border-b-2 border-red-600 pb-1 py-2 transition-colors inline-block">
+              <a href="#" class="text-xs xl:text-sm font-bold text-red-600 border-b-2 border-red-600 pb-1 py-2 transition-colors whitespace-nowrap inline-block">
                 Beranda
               </a>
             </li>
 
-            <!-- Menu Item: Kiprah & Fokus (Dropdown Mega-Menu) -->
-            <li class="relative group list-none">
-              <button class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-flex items-center focus:outline-none">
-                <span>Kiprah & Fokus</span>
-                <svg class="w-3.5 h-3.5 text-slate-400 ml-1 inline-block transition-transform duration-200 group-hover:rotate-180 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              
-              <!-- Dropdown Panel (Sleek UNESCO Style) -->
-              <div class="absolute left-0 top-full mt-2 w-80 bg-white border border-slate-200 shadow-xl py-3 px-2 hidden group-hover:block z-50 rounded-none animate-fadeIn">
-                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Pilar Gerak Kebudayaan</div>
-                <ul class="list-none m-0 p-0 space-y-1">
-                  <li class="list-none">
-                    <a href="#pilar" class="block px-3 py-2 hover:bg-slate-50 transition">
-                      <span class="font-bold text-slate-900 block text-xs">Pendidikan & Pesantren Luhur</span>
-                      <span class="text-[11px] text-slate-500 block">Transformasi Ma'had Aly dan sains turats kontemporer.</span>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#pilar" class="block px-3 py-2 hover:bg-slate-50 transition">
-                      <span class="font-bold text-slate-900 block text-xs">Nilai Kebangsaan & Moderasi</span>
-                      <span class="text-[11px] text-slate-500 block">Fiqih peradaban dan warisan Resolusi Jihad 1945.</span>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#pilar" class="block px-3 py-2 hover:bg-slate-50 transition">
-                      <span class="font-bold text-slate-900 block text-xs">Konservasi Manuskrip Kuno</span>
-                      <span class="text-[11px] text-slate-500 block">Digitalisasi dan filologi naskah peninggalan muassis.</span>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#pilar" class="block px-3 py-2 hover:bg-slate-50 transition">
-                      <span class="font-bold text-slate-900 block text-xs">Kemandirian & Wakaf Produktif</span>
-                      <span class="text-[11px] text-slate-500 block">Pemberdayaan sosial ekonomi santri dan umat.</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Menu Item: Berita & Rilis (Dropdown 7 Kategori Sesuai Permintaan Klien) -->
-            <li class="relative group list-none">
-              <button class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-flex items-center focus:outline-none">
-                <span>Berita & Rilis</span>
-                <svg class="w-3.5 h-3.5 text-slate-400 ml-1 inline-block transition-transform duration-200 group-hover:rotate-180 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              
-              <!-- Dropdown Menu 7 Kategori -->
-              <div class="absolute left-0 top-full mt-2 bg-white shadow-xl rounded-lg border border-slate-100 p-2 min-w-[220px] hidden group-hover:block z-50 animate-fadeIn">
-                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 py-1.5 mb-1 border-b border-slate-100">Kanal Berita & Rilis</div>
-                <ul class="list-none m-0 p-0 space-y-0.5">
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('pendidikan')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Pendidikan</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('pariwisata')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Pariwisata</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('sosial')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Sosial</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('pemerintah')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Pemerintah</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('gayahidup')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Gaya Hidup</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('hukumpolitik')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Hukum dan Politik</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                  <li class="list-none">
-                    <a href="#berita" onclick="filterNews('tokohreligi')" class="hover:bg-slate-50 hover:text-emerald-700 font-medium text-xs text-slate-700 py-2 px-3 rounded-md flex items-center justify-between transition-colors">
-                      <span>Tokoh dan Religi</span>
-                      <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <!-- Menu Item: Warisan & Nilai -->
+            <!-- Menu Item: Pendidikan -->
             <li class="list-none">
-              <a href="#warisan" class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-block">
-                Warisan & Nilai
+              <a href="#berita" onclick="filterNews('pendidikan')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Pendidikan
               </a>
             </li>
 
-            <!-- Menu Item: Data & Dampak -->
+            <!-- Menu Item: Pariwisata -->
             <li class="list-none">
-              <a href="#dampak" class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-block">
-                Data & Dampak
+              <a href="#berita" onclick="filterNews('pariwisata')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Pariwisata
               </a>
             </li>
 
-            <!-- Menu Item: Publikasi Resmi -->
+            <!-- Menu Item: Sosial -->
             <li class="list-none">
-              <a href="#publikasi" class="text-sm font-medium text-slate-700 hover:text-red-600 transition-colors py-2 inline-block">
-                Publikasi Resmi
+              <a href="#berita" onclick="filterNews('sosial')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Sosial
+              </a>
+            </li>
+
+            <!-- Menu Item: Pemerintah -->
+            <li class="list-none">
+              <a href="#berita" onclick="filterNews('pemerintah')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Pemerintah
+              </a>
+            </li>
+
+            <!-- Menu Item: Gaya Hidup -->
+            <li class="list-none">
+              <a href="#berita" onclick="filterNews('gayahidup')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Gaya Hidup
+              </a>
+            </li>
+
+            <!-- Menu Item: Hukum dan Politik -->
+            <li class="list-none">
+              <a href="#berita" onclick="filterNews('hukumpolitik')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Hukum dan Politik
+              </a>
+            </li>
+
+            <!-- Menu Item: Tokoh dan Religi -->
+            <li class="list-none">
+              <a href="#berita" onclick="filterNews('tokohreligi')" class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-red-600 transition-colors py-2 whitespace-nowrap inline-block">
+                Tokoh dan Religi
               </a>
             </li>
           </ul>
@@ -354,7 +286,7 @@
             type="button" 
             id="mobileMenuBtn" 
             onclick="toggleMobileDrawer(true)"
-            class="xl:hidden p-2 text-slate-700 hover:text-red-600 hover:bg-slate-100 rounded focus:outline-none focus:ring-2 focus:ring-red-600" 
+            class="lg:hidden p-2 text-slate-700 hover:text-red-600 hover:bg-slate-100 rounded focus:outline-none focus:ring-2 focus:ring-red-600" 
             aria-label="Buka Menu Navigasi"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -376,7 +308,7 @@
       <!-- Drawer Header -->
       <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
         <div class="flex items-center space-x-2">
-          <img src="Logo.png" alt="Logo" class="h-8 w-auto" onerror="this.src='https://placehold.co/60x60/0C6E3D/FFFFFF?text=JIK';">
+          <img src="Logo.png" alt="Logo" class="h-8 w-auto rounded-full" onerror="this.src='https://placehold.co/60x60/0C6E3D/FFFFFF?text=JIK';">
           <span class="font-extrabold text-xs text-brand-green tracking-wider uppercase">Jombang Nahdliyin</span>
         </div>
         <button onclick="toggleMobileDrawer(false)" class="p-1.5 text-slate-500 hover:text-slate-800">
@@ -384,33 +316,19 @@
         </button>
       </div>
 
-      <!-- Drawer Nav Links -->
-      <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-        <a href="#" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-bold text-brand-green bg-emerald-50 rounded-none">Beranda</a>
-        <a href="#jadwal-sholat" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-emerald-800 bg-emerald-50/60 hover:bg-emerald-100/50">Jadwal Sholat & Ibadah</a>
-        <a href="#pilar" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Kiprah & Pilar Fokus</a>
-        
-        <!-- Mobile Dropdown Berita & Rilis (7 Kategori) -->
-        <div class="py-1">
-          <button type="button" onclick="document.getElementById('mobileBeritaSub').classList.toggle('hidden')" class="w-full flex items-center justify-between px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">
-            <span>Berita & Rilis (7 Kategori)</span>
-            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-          </button>
-          <div id="mobileBeritaSub" class="pl-4 pr-1 py-1 space-y-1 text-xs">
-            <a href="#berita" onclick="filterNews('pendidikan'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pendidikan</a>
-            <a href="#berita" onclick="filterNews('pariwisata'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pariwisata</a>
-            <a href="#berita" onclick="filterNews('sosial'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Sosial</a>
-            <a href="#berita" onclick="filterNews('pemerintah'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Pemerintah</a>
-            <a href="#berita" onclick="filterNews('gayahidup'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Gaya Hidup</a>
-            <a href="#berita" onclick="filterNews('hukumpolitik'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Hukum dan Politik</a>
-            <a href="#berita" onclick="filterNews('tokohreligi'); toggleMobileDrawer(false)" class="block py-1.5 px-2 text-slate-600 hover:text-emerald-700 hover:bg-slate-50">• Tokoh dan Religi</a>
-          </div>
+      <!-- Drawer Nav Links (Menu Baru: 7 Kategori Klien) -->
+      <nav class="flex-1 px-4 py-6 space-y-1 overflow-y-auto text-sm font-medium">
+        <a href="#" onclick="toggleMobileDrawer(false)" class="block px-3 py-2.5 font-bold text-red-600 bg-red-50/60 rounded">Beranda</a>
+        <a href="#berita" onclick="filterNews('pendidikan'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Pendidikan</a>
+        <a href="#berita" onclick="filterNews('pariwisata'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Pariwisata</a>
+        <a href="#berita" onclick="filterNews('sosial'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Sosial</a>
+        <a href="#berita" onclick="filterNews('pemerintah'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Pemerintah</a>
+        <a href="#berita" onclick="filterNews('gayahidup'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Gaya Hidup</a>
+        <a href="#berita" onclick="filterNews('hukumpolitik'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Hukum dan Politik</a>
+        <a href="#berita" onclick="filterNews('tokohreligi'); toggleMobileDrawer(false)" class="block px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-red-600 rounded transition">Tokoh dan Religi</a>
+        <div class="pt-2 border-t border-slate-200 mt-2">
+          <a href="#jadwal-sholat" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-emerald-800 bg-emerald-50 rounded">Jadwal Sholat & Ibadah</a>
         </div>
-
-        <a href="#warisan" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Warisan & Nilai Sejarah</a>
-        <a href="#dampak" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Data & Angka Dampak</a>
-        <a href="#publikasi" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Publikasi & Dokumen</a>
-        <a href="#agenda" onclick="toggleMobileDrawer(false)" class="block px-3 py-2 font-semibold text-slate-800 hover:bg-slate-100">Agenda Kegiatan</a>
       </nav>
 
       <!-- Drawer Footer -->
@@ -2031,7 +1949,7 @@
     }
 
     // 5. News Category Interactive Filter Tabs
-    function filterNews(category) {
+    function filterNews(category, shouldScroll = true) {
       // Toggle button styles
       const tabs = document.querySelectorAll('.news-tab');
       tabs.forEach(tab => {
@@ -2054,6 +1972,14 @@
           card.classList.add('hidden');
         }
       });
+
+      // Smooth scroll to news section if invoked from navbar
+      if (shouldScroll) {
+        const beritaSec = document.getElementById('berita');
+        if (beritaSec) {
+          beritaSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
 
     // 6. Document Preview Modal
